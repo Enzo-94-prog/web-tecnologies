@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bootstrap Grid-Layout </title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Inizio del primo contenitore per il layout a due colonne -->
+<div class="container">
+    <div class="row">
+        <!-- Prima colonna, utilizza metà dello spazio disponibile su dispositivi medi -->
+        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+            <!-- Titolo della sezione -->
+            <h2>Titolo della sezione</h2>
+            <!-- Testo di esempio per la sezione -->
+            <p>Testo di esempio per la sezione.</p>
+        </div>
+        
+        <!-- Seconda colonna, utilizza metà dello spazio disponibile su dispositivi medi -->
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <!-- Immagine di esempio con stile responsivo -->
+            <img src="https://picsum.photos/400/300" 
+                 style="max-width: 100%; height: auto; overflow: hidden;" 
+                 alt="Immagine di esempio">
+        </div>
+    </div>
+</div>
+<!-- Separatore orizzontale -->
+<hr>
+
+<!-- Inizio del secondo contenitore con 4 colonne -->
+<div class="container">
+    <div class="row">
+        <!-- Colonna 1: su dispositivi piccoli occupa metà, su dispositivi medi un terzo e su dispositivi grandi un quarto dello spazio -->
+        <div class="col-sm-6 col-md-4 col-lg-3" style="background-color: red; color: white;">
+            Colonna 1
+        </div>
+        
+        <!-- Colonna 2: stessa configurazione della colonna 1 -->
+        <div class="col-sm-6 col-md-4 col-lg-3" style="background-color: green; color: white;">
+            Colonna 2
+        </div>
+        
+        <!-- Colonna 3: stessa configurazione della colonna 1 -->
+        <div class="col-sm-6 col-md-4 col-lg-3" style="background-color: blue; color: white;">
+            Colonna 3
+        </div>
+        
+        <!-- Colonna 4: stessa configurazione della colonna 1 -->
+        <div class="col-sm-6 col-md-4 col-lg-3" style="background-color: black; color: white;">
+            Colonna 4
+        </div>
+    </div>
+</div>
+<!-- Separatore orizzontale -->
+<hr>
+
+<!-- Inizio di una riga con 3 colonne di uguali dimensioni su dispositivi medi -->
+<div class="container">
+    <div class="row">
+        <div class="col-md">Colonna 1</div>
+        <div class="col-md">Colonna 2</div>
+        <div class="col-md">Colonna 3</div>
+    </div>
+</div>
+<!-- Separatore orizzontale -->
+<hr>
+
+<!-- Barra di navigazione con menu -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!-- Nome del sito -->
+        <a class="navbar-brand" href="#">Il mio sito</a>
+        
+        <!-- Bottone per la visualizzazione del menu sui dispositivi mobili -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Menu di navigazione -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Link Home -->
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <!-- Link Chi siamo -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Chi siamo</a>
+                </li>
+                <!-- Link Contatti -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contatti</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Separatore orizzontale -->
+<hr>
+
+<!-- Bottone per aprire il modale -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Apri il modale
+</button>
+
+<!-- Modale (finestra popup) -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Intestazione del modale -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Esempio di modale Bootstrap
+                </h5>
+                <!-- Pulsante di chiusura del modale -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Corpo del modale con contenuto -->
+            <div class="modal-body">
+                <p>Lorem Ipsum</p>
+            </div>
+            <!-- Footer del modale con pulsante di chiusura -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bottone per salvare le modifiche -->
+<button type="button" class="btn btn-primary">Salva le modifiche</button>
+<!-- Separatore orizzontale -->
+<hr>
+
+<!-- Link allo script di Bootstrap (per funzionalità come il modale e la navbar) -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!-- Commenti aggiunti:
+
+    Container e Row: ogni sezione ha un contenitore (<div class="container">) per allineare 
+                     correttamente gli elementi al suo interno e una riga (<div class="row">)
+                     per strutturare le colonne.
+
+    Colonne: vengono usate le classi col-sm-6, col-md-4, col-lg-3, ecc., per rendere il 
+             layout responsivo e adattabile a diversi dispositivi.
+
+    Navbar: la barra di navigazione è reattiva, con un bottone di "toggle" per la 
+            visualizzazione sui dispositivi mobili.
+
+    Modale: il modale è un componente che può essere aperto con un pulsante e contiene una 
+            finestra di dialogo con un titolo, un corpo e un pulsante di chiusura. -->
+
+</body>
+</html>

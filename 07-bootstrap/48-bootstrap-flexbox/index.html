@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bootstrap Laboratorio </title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    
+    <!-- Alcuni esempi di utilizzo di Flexbox. -->
+    
+    <style>
+        .container {
+            width: 100%; /* Assicura che il container prenda tutta la larghezza disponibile */
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+            border: 2px dashed red; /* Aiuta a visualizzare meglio il contenitore */
+            padding: 10px;
+            background-color: lightblue;
+        }
+        .box {
+            width: 30%; /* Ridotta la larghezza per creare spazio tra gli elementi */
+            height: 200px;
+           
+            background-color: #f1f1f1;
+            border: 2px solid black;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 200px;
+            font-weight: bold;
+        }
+    </style> 
+
+    <div class="container">
+        <div class="row">
+            <div class="box">Colonna 1</div>
+            <div class="box">Colonna 2</div>
+            <div class="box">Colonna 3</div>
+        </div>
+    </div>
+    <hr>
+
+
+    <style>
+        .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    
+        .box2 {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            background-color: red;
+        }
+    </style>
+    
+    <div class="container2">
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+    </div>
+    <hr>
+
+
+    <style>
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+    
+        .gallery-item {
+            width: 300px;
+        }
+    
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/237/300/200" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/238/300/200" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/239/300/200" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/240/300/200" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/241/300/200" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/242/300/200" alt="Gallery Image">
+        </div>
+    </div>
+    <hr>
+
+    <style>
+        .container3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    
+        .box3 {
+            background-color: #f1c40f;
+            color: #ffffff;
+            font-size: 3rem;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        .box-1 {
+            flex: 1;
+            order: 3;
+        }
+    
+        .box-2 {
+            flex: 2;
+            order: 2;
+        }
+    
+        .box-3 {
+            flex: 1;
+            order: 1;
+        }
+    </style>
+    
+    <div class="container3">
+        <div class="box3 box-1">Box 1</div>
+        <div class="box3 box-2">Box 2</div>
+        <div class="box3 box-3">Box 3</div>
+    </div>
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

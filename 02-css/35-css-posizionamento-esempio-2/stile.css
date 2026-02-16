@@ -1,0 +1,123 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    border: 2px solid black;
+    position: relative;
+    left: 30px;
+}
+
+/* position relative fino a green3 */
+.red {
+    background-color: red;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+    position: relative;
+    left: 30px;
+}
+
+.blue {
+    background-color: blue;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+    position: relative;
+    right: 100px; /*con un “right” posso far scomparire una delle immagini */
+}
+ 
+.green {
+    background-color: green;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+    position: relative;
+    left: 100px;
+}
+
+/*---------------------------------------*/
+/* position relative */
+.red2 {
+    background-color: red;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+}
+
+.blue2 {
+    background-color: blue;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+    position: relative;
+    top: 100px; /* sposta il blue 
+                   di 100px sovrapponendosi al verde */
+    z-index: -1; /* mostra quello che c'è dietro il verde */
+}
+
+.green2 {
+    background-color: green;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+}
+
+/*---------------------------------------*/
+
+.red3 {
+    background-color: red;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+}
+
+.blue3 {
+    background-color: blue;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+    position: relative;
+    bottom: 100px;
+    left: 100px;
+}
+
+.green3 {
+    background-color: green;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+    position: relative;
+    bottom: 200px;
+    left: 200px;
+}
+
+/*---------------------------------------*/
+
+.red4 {
+    background-color: red;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+    display: inline-block;
+}
+
+.blue4 {
+    background-color: blue;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+    display: inline-block;
+
+}
+
+.green4 {
+    background-color: green;
+    width: 100px; /* larghezza */
+    height: 100px; /* altezza */
+    display: inline-block;
+}
+
+/*---------------------------------------*/
+.red5 {
+    background-color: red;
+    width: 300px; /* larghezza */
+    height: 300px; /* altezza */
+    position: relative;
+}
+
+img {
+    border: 5px solid;
+    position: relative;
+    right: 50px;
+}

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esempio di utilizzo di Bootstrap e media queries</title>
+
+    <!-- Meta tag per la visibilità su dispositivi mobili e il corretto dimensionamento della pagina -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Collegamento al foglio di stile di Bootstrap tramite CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
+    <!-- Stili CSS personalizzati per modificare la larghezza massima del contenitore in base alla dimensione dello schermo -->
+    <style>
+        /* Media query per dispositivi con larghezza minima di 768px (tablet e dispositivi medi) */
+        @media only screen and (min-width: 768px) {
+            .container {
+                max-width: 800px; /* Imposta la larghezza massima del contenitore a 800px */
+            }
+        }
+
+        /* Media query per dispositivi con larghezza minima di 992px (dispositivi desktop) */
+        @media only screen and (min-width: 992px) {
+            .container {
+                max-width: 1000px; /* Imposta la larghezza massima del contenitore a 1000px */
+            }
+        }
+
+        /* Media query per dispositivi con larghezza minima di 1200px (dispositivi con schermi più grandi) */
+        @media only screen and (min-width: 1200px) {
+            .container {
+                max-width: 1200px; /* Imposta la larghezza massima del contenitore a 1200px */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Inizio del contenitore principale che racchiude la griglia -->
+    <div class="container">
+        <div class="row">
+            <!-- Colonna 1: occupa metà dello schermo su dispositivi piccoli, un terzo su dispositivi medi e un quarto su dispositivi grandi -->
+            <div class="col-sm-6 col-md-4 col-lg-3" style="background-color: red; color: white;">
+                Colonna 1
+            </div>
+
+            <!-- Colonna 2: stessa configurazione della colonna 1 ma con colore di sfondo verde -->
+            <div class="col-sm-6 col-md-4 col-lg-3" style="background-color: green; color: white;">
+                Colonna 2
+            </div>
+
+            <!-- Colonna 3: stessa configurazione della colonna 1 ma con colore di sfondo blu -->
+            <div class="col-sm-6 col-md-4 col-lg-3" style="background-color: blue; color: white;">
+                Colonna 3
+            </div>
+
+            <!-- Colonna 4: stessa configurazione della colonna 1 ma con colore di sfondo nero -->
+            <div class="col-sm-6 col-md-4 col-lg-3" style="background-color: black; color: white;">
+                Colonna 4
+            </div>
+        </div>
+    </div>
+
+    <!-- Commenti aggiunti:
+
+Meta tag viewport: Imposta il comportamento della pagina su dispositivi mobili, permettendo 
+                    alla pagina di adattarsi alla larghezza dello schermo.
+
+Collegamento a Bootstrap: Utilizzo di Bootstrap tramite CDN per accedere alle sue 
+                          funzionalità di design responsivo e ai componenti UI.
+
+Media Queries: Le media queries sono utilizzate per adattare la larghezza del contenitore 
+               (.container) in base alla larghezza del dispositivo. Questo permette di 
+               rendere la pagina più flessibile sui dispositivi di diverse dimensioni.
+
+Ogni media query specifica una larghezza massima per il contenitore:
+    768px per tablet,
+    992px per dispositivi desktop,
+    1200px per schermi molto ampi.
+
+Griglia Bootstrap: Il layout usa la griglia di Bootstrap per creare una serie di colonne che
+                   si adattano automaticamente alla larghezza dello schermo. Ogni colonna ha 
+                   diverse larghezze su schermi di dimensioni diverse, grazie alle classi 
+                   col-sm-6, col-md-4, e col-lg-3, per rendere il layout responsive.
+
+                   Inclusione di JavaScript: Include il file JavaScript di Bootstrap per 
+                   abilitare funzionalità interattive come il comportamento della navbar, 
+                   modali, e altri componenti dinamici.
+
+
+Conclusione:
+Il codice è ben strutturato per essere responsivo e si adatta facilmente a dispositivi di 
+diverse dimensioni grazie a Bootstrap e alle media queries. La parte CSS consente di 
+personalizzare ulteriormente la larghezza del contenitore in base alle esigenze.
+
+ -->
+
+    <hr>
+
+
+        <!-- Bottone con classe 'btn-primary' per un bottone con stile principale -->
+    <button type="button" class="btn btn-primary">Primary</button>
+
+    <!-- Bottone con classe 'btn-secondary' per un bottone con stile secondario -->
+    <button type="button" class="btn btn-secondary">Secondary</button>
+
+    <!-- Bottone con classe 'btn-success' per un bottone con stile di successo -->
+    <button type="button" class="btn btn-success">Success</button>
+
+    <!-- Bottone con classe 'btn-danger' per un bottone con stile di pericolo -->
+    <button type="button" class="btn btn-danger">Danger</button>
+
+    <!-- Bottone con classe 'btn-warning' per un bottone con stile di avvertimento -->
+    <button type="button" class="btn btn-warning">Warning</button>
+
+    <!-- Bottone con classe 'btn-info' per un bottone con stile informativo -->
+    <button type="button" class="btn btn-info">Info</button>
+
+    <!-- Bottone con classe 'btn-light' per un bottone con stile chiaro -->
+    <button type="button" class="btn btn-light">Light</button>
+
+    <!-- Bottone con classe 'btn-dark' per un bottone con stile scuro -->
+    <button type="button" class="btn btn-dark">Dark</button>
+
+    <!-- Bottone con classe 'btn-link' per un bottone che appare come un link -->
+    <button type="button" class="btn btn-link">Link</button>
+
+    <!-- Commenti aggiunti:
+     Ogni bottone ha una classe specifica di Bootstrap per determinare il suo stile. Le classi 
+     come btn-primary, btn-secondary, btn-success, ecc., definiscono diversi colori e 
+     comportamenti visivi per i bottoni.
+     La classe btn-link rende il bottone visivamente simile a un link, quindi può essere 
+     utilizzato per interazioni che non devono sembrare bottoni tradizionali. -->
+
+    <hr>
+
+
+    <!-- Contenitore principale per il carousel -->
+    
+    <style>
+        /* Impostazione del colore nero per le icone dei pulsanti del carousel */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: black; /* Colore di sfondo dell'icona */
+        }
+    </style>
+    
+    <div class="container">
+        
+        <!-- Inizializzazione del carousel, con id per il controllo -->
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            
+            <!-- Sezione che contiene gli elementi del carousel -->
+            <div class="carousel-inner">
+                
+                <!-- Primo elemento del carousel, visibile per default (classe 'active') -->
+                <div class="carousel-item active">
+                    <img src="https://source.unsplash.com/random/800x400?nature" class="d-block w-100" alt="immagine1">
+                </div>
+                
+                <!-- Secondo elemento del carousel -->
+                <div class="carousel-item">
+                    <img src="https://source.unsplash.com/random/800x400?travel" class="d-block w-100" alt="immagine2">
+                </div>
+                
+                <!-- Terzo elemento del carousel -->
+                <div class="carousel-item">
+                    <img src="https://source.unsplash.com/random/800x400?city" class="d-block w-100" alt="immagine3">
+                </div>
+            </div>
+
+            <!-- Pulsante per scorrere al precedente elemento del carousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <!-- Pulsante per scorrere al prossimo elemento del carousel -->
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Commenti aggiunti:
+    Contenitore principale: Il <div class="container"> viene utilizzato per contenere e 
+                            centrare il carousel sulla pagina.
+
+    Carousel: Il carousel slide è un componente di Bootstrap che permette di creare una 
+              presentazione a scorrimento orizzontale delle immagini.
+
+    carousel-inner: Contiene tutti gli elementi (carousel-item) che rappresentano ogni 
+                    singola diapositiva.
+
+    carousel-item active: La classe active è usata per indicare quale elemento deve essere
+                          visibile inizialmente.
+
+    Immagini: Ogni immagine viene mostrata come una diapositiva del carousel. La classe 
+              d-block w-100 assicura che ogni immagine occupi il 100% della larghezza.
+
+    Controlli di navigazione: I pulsanti precedenti e successivi permettono di navigare 
+                              tra le immagini del carousel. I relativi icone 
+                              (carousel-control-prev-icon e carousel-control-next-icon) 
+                              sono usati per rappresentare le frecce di navigazione. -->
+
+
+    <!-- Inclusione del file JavaScript di Bootstrap tramite CDN per funzionalità come i menu a tendina e i modali -->
+    <hr>
+
+    <!-- Contenitore principale con margine superiore -->
+    <div class="container mt-3">
+        <!-- Pulsante per mostrare il toast -->
+        <button type="button" class="btn btn-primary" id="show-toast">
+            Mostra toast
+        </button>
+    </div>
+
+    <!-- Contenitore per il toast, posizionato fisso in basso a destra -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <!-- Toast principale -->
+        <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <!-- Intestazione del toast -->
+            <div class="toast-header">
+                <strong class="me-auto">Toast!</strong> <!-- Titolo del toast -->
+                <small>close</small> <!-- Indicazione di chiusura -->
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <!-- Corpo del toast -->
+            <div class="toast-body">
+                Hello World!
+            </div>
+        </div>
+    </div>
+
+    <!-- Script per gestire la visualizzazione del toast -->
+    <script>
+        // Seleziona il pulsante e il toast dal DOM
+        const showToastBtn = document.getElementById('show-toast');
+        const toastEl = document.getElementById('toast');
+
+        // Crea un'istanza di toast di Bootstrap
+        const toast = new bootstrap.Toast(toastEl);
+
+        // Aggiunge un event listener per mostrare il toast quando si clicca il pulsante
+        showToastBtn.addEventListener('click', () => {
+            toast.show();
+        });
+    </script>
+
+    <!-- Cosa fa il codice
+    
+    Sezione HTML:
+
+    Il pulsante "Mostra toast" viene posizionato in un container con margine 
+    superiore (mt-3).
+
+    Il toast è contenuto in una toast-container, che lo posiziona in basso a 
+    destra dello schermo (position-fixed bottom-0 end-0 p-3).
+
+    Il toast ha un'intestazione (toast-header) con un titolo e un pulsante di chiusura.
+    
+    Il contenuto del toast (toast-body) mostra "Hello World!".
+
+    
+    Sezione JavaScript:
+
+    Seleziona il pulsante e il toast dal DOM.
+    Crea un'istanza del toast usando Bootstrap (new bootstrap.Toast(toastEl)).
+    Aggiunge un event listener che mostra il toast quando l'utente clicca sul pulsante.-->
+    <hr>
+
+
+    <!-- Contenitore principale con margine superiore -->
+    <div class="container mt-5">
+        <!-- Barra di avanzamento -->
+        <div class="progress">
+            <!-- Barra di avanzamento animata e con strisce -->
+            <div class="progress-bar progress-bar-striped progress-bar-animated"
+                role="progressbar"
+                aria-valuenow="0"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 0%">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Seleziona l'elemento della barra di avanzamento
+        const progressBar = document.querySelector('.progress-bar');
+        let progressValue = 0; // Valore iniziale della progress bar
+
+        // Incrementa il valore della progress bar ogni 50ms
+        const interval = setInterval(() => {
+            progressValue += 1; // Aumenta la percentuale di 1 unità
+            progressBar.style.width = `${progressValue}%`; // Aggiorna la larghezza della barra
+            progressBar.setAttribute('aria-valuenow', progressValue); // Aggiorna il valore ARIA
+
+            // Se il valore raggiunge il 100%, interrompe l'animazione
+            if (progressValue === 100) clearInterval(interval);
+        }, 50);
+    </script>
+
+    <!-- Cosa fa il codice
+    Sezione HTML:
+
+    Il contenitore Bootstrap (container mt-5) posiziona la barra di avanzamento con margine 
+    superiore.
+
+    Il componente progress contiene una barra (progress-bar) che è animata e a strisce 
+    (progress-bar-striped progress-bar-animated).
+
+    Attributi aria-valuenow, aria-valuemin e aria-valuemax migliorano l'accessibilità.
+    
+    
+    Sezione JavaScript:
+
+    Seleziona l'elemento .progress-bar.
+    Imposta una variabile progressValue a 0.
+    Utilizza setInterval() per incrementare il valore della barra ogni 50ms, aggiornando la 
+    larghezza e l'attributo ARIA.
+    Quando progressValue raggiunge 100, interrompe l'intervallo con clearInterval(interval). -->
+    <hr>
+
+
+    <div class="spinner-border text-primary text-dark" role="status">
+        <span class="visually-hidden" >Loading...</span>
+    </div>
+    <!-- Cosa fa il codice
+    
+    Sezione HTML:
+
+    Il contenitore Bootstrap (container mt-5) posiziona la barra di avanzamento con margine 
+    superiore.
+
+    Il componente progress contiene una barra (progress-bar) che è animata e a strisce 
+    (progress-bar-striped progress-bar-animated).
+
+    Attributi aria-valuenow, aria-valuemin e aria-valuemax migliorano l'accessibilità.
+    
+    
+    Sezione JavaScript:
+
+    Seleziona l'elemento .progress-bar.
+    Imposta una variabile progressValue a 0.
+
+    Utilizza setInterval() per incrementare il valore della barra ogni 50ms, aggiornando 
+    la larghezza e l'attributo ARIA.
+
+    Quando progressValue raggiunge 100, interrompe l'intervallo con clearInterval(interval). -->
+    <hr>
+
+
+    <!-- Lista Bootstrap -->
+    <ul class="list-group">
+        <!-- Elementi della lista -->
+        <li class="list-group-item">Elemento 1</li>
+        <li class="list-group-item">Elemento 2</li>
+        <li class="list-group-item">Elemento 3</li>
+    </ul>
+
+    <script>
+        // Seleziona tutti gli elementi della lista
+        let listItems = document.querySelectorAll('.list-group-item');
+
+        // Aggiunge un event listener per il click su ogni elemento della lista
+        listItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Rimuove la classe 'active' da tutti gli elementi della lista
+                listItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Aggiunge la classe 'active' solo all'elemento cliccato
+                item.classList.add('active');
+            });
+        });
+    </script>
+    <hr>
+
+
+    <!-- Navigazione per la paginazione -->
+    <ul class="pagination">
+        <!-- Pulsante "Previous" disabilitato -->
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        
+        <!-- Link alla pagina 1 -->
+        <li class="page-item">
+            <a class="page-link" href="#">1</a>
+        </li>
+
+        <!-- Link alla pagina 2 (attiva) -->
+        <li class="page-item active">
+            <a class="page-link" href="#">2</a>
+        </li>
+
+        <!-- Link alla pagina 3 -->
+        <li class="page-item">
+            <a class="page-link" href="#">3</a>
+        </li>
+
+        <!-- Pulsante "Next" per passare alla pagina successiva -->
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+
+    <!-- Spiegazione del codice:
+    1. Struttura Bootstrap per la paginazione usando la classe .pagination.
+
+    2. Elemento "Previous" disabilitato (.disabled e aria-disabled="true"):
+            Indica che l'utente non può andare alla pagina precedente.
+            tabindex="-1" impedisce la selezione tramite tastiera.
+
+    3. Numeri di pagina:
+        Ogni elemento ha la classe .page-item, con il link contenuto in .page-link.
+        Il numero 2 è attivo (.active), evidenziando la pagina corrente.
+    
+    Pulsante "Next" consente di passare alla pagina successiva. -->
+    <hr>
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

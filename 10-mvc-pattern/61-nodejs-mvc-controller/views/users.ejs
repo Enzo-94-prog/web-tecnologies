@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Users List</title>
+</head>
+<body>
+  <!-- Titolo della pagina -->
+  <h1>Users List</h1>
+
+  <!-- Lista non ordinata per visualizzare gli utenti -->
+  <ul>
+    <!-- Cicla attraverso ogni utente nell'array 'users' passato dalla vista -->
+    <% users.forEach(user => { %>
+      <!-- Crea un elemento di lista per ogni 'user' e mostra il nome dell'utente -->
+      <li><%= user.name %></li>
+    <% }); %>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> JQuery-Ajax </title>
+
+    <!-- Meta tag per la visibilità su dispositivi mobili e il corretto dimensionamento della pagina -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Inclusione della libreria di JQuery -->
+    <script src="jquery-3.7.1.js"></script>
+
+</head>
+<body>
+    
+    <script>
+            // XHR (XMLHttpRequest) per fare una richiesta HTTP asincrona
+    const xhr = new XMLHttpRequest(); // Crea un nuovo oggetto XMLHttpRequest
+    xhr.open('GET', 'https://example.com/data.json'); // Imposta il metodo 'GET' e l'URL della risorsa
+    xhr.onload = () => { // Definisce una funzione di callback da eseguire quando la richiesta è completata
+        if (xhr.status === 200) { // Controlla se la risposta è stata ricevuta correttamente (status 200)
+            const data = JSON.parse(xhr.responseText); // Converte (il corpo della risposta) la stringa JSON in un oggetto javascript
+            console.log(data); // Stampa i dati nel console log
+        }
+    };
+    xhr.send(); // Invia la richiesta
+
+
+
+    // FETCH API per fare una richiesta HTTP asincrona (alternativa a XMLHttpRequest)
+    fetch('https://example.com/data.json') // Effettua la richiesta con il metodo 'GET' all'URL specificato
+        
+        .then(response => {
+            if (response.ok) {
+            return response.json(); /* response.json converte automaticamente questa stringa 
+                                       JSON in un oggetto JavaScript, è come se JSON.parse() 
+                                       fosse invocato automaticamente al suo interno */
+           
+            /* Il metodo response.json() è un metodo incorporato dell'oggetto Response. 
+               Quando lo chiami, il corpo della risposta viene letto e convertito in formato 
+               JSON. Quindi, non devi usare manualmente JSON.parse() perché response.json() 
+               si occupa di fare il parsing automaticamente. */
+        }
+        
+        throw new Error('Network response was not ok.');
+    })
+    
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
+    /* Spiegazione dettagliata:
+
+    fetch(): Quando viene invocata, la funzione fetch() restituisce una Promise che 
+             si risolve in un oggetto Response. Questo oggetto Response contiene tutte le 
+             informazioni sulla risposta ricevuta dal server (come lo status, le intestazioni
+             e il corpo della risposta).
+
+             
+    .then(response => {...}):
+
+        .then(): è un metodo che viene utilizzato per "aggiungere" una funzione di callback 
+                 che verrà eseguita quando la Promise restituita da fetch() viene risolta 
+                 con successo.
+    
+        response.ok: verifica se la risposta ha uno status di successo (ossia, un codice di 
+                     stato HTTP compreso tra 200 e 299). Se la risposta è corretta, 
+                     response.json() converte la risposta in formato JSON. Se la risposta 
+                     non è corretta (ad esempio, se il server restituisce un errore), viene 
+                     lanciato un errore personalizzato con throw new Error('Network response 
+                     was not ok.')
+    
+        .then(data => console.log(data)): Una volta che la risposta è stata trasformata in 
+                                          JSON, i dati vengono passati al secondo .then() 
+                                          dove vengono stampati nella console.
+
+        .catch(error => console.error(error)): Se si verifica un errore durante la richiesta 
+                                               o nel processo di parsing dei dati JSON, 
+                                               l'errore viene catturato dal blocco .catch() e
+                                               viene stampato nella console.
+        
+    */
+
+    </script>
+
+
+    <script>
+    // Esegui una richiesta AJAX usando jQuery
+    $.ajax({
+        url: 'https://example.com/data.json', // L'URL della risorsa da cui vogliamo recuperare i dati
+        method: 'GET', // Il metodo HTTP utilizzato (GET in questo caso)
+        dataType: 'json', // Indica che ci aspettiamo una risposta in formato JSON
+        
+        success: function(data) {
+            // Questa funzione viene chiamata se la richiesta è andata a buon fine
+            console.log(data); // Stampa i dati ricevuti (già parsati come oggetto JSON)
+        },
+        
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Questa funzione viene chiamata se c'è un errore nella richiesta
+            console.error(textStatus, errorThrown); // Stampa l'errore nella console
+        }
+    });
+
+    /*
+    Spiegazione dettagliata
+    
+    url: 'https://example.com/data.json':
+
+        Indica l'URL della risorsa da cui vogliamo recuperare i dati (in questo caso, un file JSON).
+    
+
+    method: 'GET':
+
+        Specifica che vogliamo eseguire una richiesta di tipo GET, che viene generalmente utilizzata per ottenere dati da un server.
+    
+
+    dataType: 'json':
+
+        Indica che ci aspettiamo una risposta in formato JSON. jQuery gestirà automaticamente il parsing della risposta, quindi non è necessario usare JSON.parse().
+    
+
+    success: function(data) {...}:
+
+        success è una funzione di callback che viene eseguita se la richiesta è andata a buon fine (ovvero se il server ha restituito una risposta con stato 200).
+    
+        La variabile data contiene i dati ricevuti dalla risposta, già parsati come oggetto JSON.
+    
+        In questo esempio, i dati vengono semplicemente stampati nella console con console.log(data).
+    
+    
+    error: function(jqXHR, textStatus, errorThrown) {...}:
+
+        error è una funzione di callback che viene eseguita se c'è un errore durante la richiesta (ad esempio, se il server non risponde o se c'è un problema di rete).
+        
+        jqXHR è l'oggetto jQuery XMLHttpRequest, che contiene informazioni dettagliate sulla richiesta.
+        
+        textStatus fornisce un testo che descrive lo stato dell'errore.
+    
+        errorThrown fornisce dettagli sull'errore che si è verificato.
+    
+    */
+    </script>
+    
+    <script>
+            // Esegui una richiesta GET usando jQuery
+    $.get('https://example.com/data.json', function(data) {
+        // La funzione di callback viene eseguita quando i dati vengono ricevuti dal server
+        console.log(data); // Stampa i dati ricevuti nella console
+    });
+
+    /**/
+    </script>
+
+
+    <script>
+    // Esegui una richiesta POST usando jQuery
+    $.post('https://example.com/data', { 
+        // I dati da inviare al server tramite il corpo della richiesta
+        name: 'John', // Nome da inviare
+        age: 30 // Età da inviare
+    }, 
+    function(data) {
+        // La funzione di callback viene eseguita quando il server risponde
+        console.log(data); // Stampa i dati ricevuti dalla risposta del server
+    });
+    </script>
+
+
+    <script>
+        // Esegui una richiesta GET per ottenere dati JSON usando jQuery
+    $.getJSON('https://example.com/data.json', function(data) {
+        // La funzione di callback viene eseguita quando i dati JSON vengono ricevuti dal server
+        console.log(data); // Stampa i dati ricevuti nella console
+    });
+    </script>
+    
+
+    <script>
+    // Imposta le configurazioni predefinite per tutte le richieste AJAX jQuery
+    $.ajaxSetup({
+        // Imposta il tipo di dato che ci aspettiamo come risposta (JSON)
+        dataType: 'json',
+        
+        // Funzione di callback che viene eseguita prima dell'invio della richiesta AJAX
+        beforeSend: function(xhr) {
+            // Aggiunge un'intestazione di autorizzazione con un token Bearer
+            xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+        }
+    });
+    </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,21 @@
+{
+  "name": "57-nodejs",
+  "version": "1.0.0",
+  "description": "Descrizione del progetto",
+  "main": "index.js",
+  "scripts": {
+    "test": "start: node index.js"
+  },
+  "author": "enzo",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "passport": "^0.7.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0"
+  }
+}

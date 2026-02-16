@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+h1 {color: red;
+    /*overflow: auto;  permette di definire il comportamento da adottare quando il contenuto 
+                       deborda dalle dimensioni fissate*/
+}
+
+h2 {color: blue;}
+/*div {
+    /* display: block; è il valore predefinito per <div>,<p> e <h> se non specificato */
+    /* overflow: visible; è il valore predefinito. Il contenuto che supera le dimensioni 
+                          dell'elemento non viene nascosto e può debordare fuori dai 
+                          limiti del contenitore
+}*/
+div { /* div funge da selettore */
+width: 320px; /* larghezza */
+padding: 10px; /* distanza tra il content e il border */
+border: 10px solid green;
+margin: 10px;
+}
+                 
+

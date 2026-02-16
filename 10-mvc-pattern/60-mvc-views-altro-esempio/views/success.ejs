@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+</head>
+<body>
+
+    <!-- Titolo della pagina -->
+    <h1>Success</h1>
+
+    <!-- Messaggio di conferma con i dati inviati dal form -->
+    <p>Thank you for your submission, <%= name %>!</p>
+    <p>We will contact you at <%= email %> soon.</p>
+    <p>Your message was: <%= message %></p>
+
+</body>
+</html>
+
+
+<!-- Funzionamento:
+
+<%= name %> → Stampa il nome inviato dal form.
+<%= email %> → Stampa l'email dell'utente.
+<%= message %> → Stampa il messaggio inviato dall'utente.
+
+Questa pagina viene visualizzata dopo l'invio del form, utilizzando res.render('success', 
+{ name, email, message }). 
+ 
+-->

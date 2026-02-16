@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+<body>
+
+    <!-- Titolo della pagina -->
+    <h1>Form</h1>
+
+    <!-- Form che invia i dati alla rotta "/myform" con metodo POST -->
+    <form action="/myform" method="POST">
+        
+        <!-- Campo per il nome -->
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+        <br>
+
+        <!-- Campo per l'email -->
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+
+        <!-- Campo per il messaggio -->
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" required></textarea>
+        <br>
+
+        <!-- Pulsante di invio -->
+        <input type="submit" value="Submit">
+        
+    </form>
+
+</body>
+</html>
+
+
+<!-- Funzionamento:
+Il form raccoglie il nome, l'email e il messaggio.
+I dati vengono inviati alla rotta POST /myform.
+I campi sono obbligatori (required), quindi il form non può essere inviato vuoto. -->

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <link href="stile.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    
+    <!-- L'elemento "button" rappresenta un pulsante etichettato in base al suo contenuto -->
+    <button id="btn"> Fai click qui </button>
+    <script> //script inline
+        document.getElementById("btn").addEventListener("click", function() {
+            alert("Hai cliccato sul Pulsante");
+        });
+    </script>
+    
+    <!-- L'elemento hr rappresenta una rottura tematica a livello di paragrafo -->
+    <hr>
+    
+    <button id="aggiungiBtn"> Aggiungi elemento </button>
+    <ul id="lista"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

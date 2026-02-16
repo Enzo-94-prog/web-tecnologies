@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indovina il numero</title>
+    <link href="stile.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <!-- Il codice di seguito rappresenta un semplice gioco "Indovina il numero" che mette 
+         alla prova le abilità di logica e di conteggio dell'utente. Il codice JavaScript 
+         è la parte interattiva della pagina che gestisce la logica del gioco "Indovina il
+         numero". In particolare, genera un numero casuale tra 1 e 100, tiene traccia del 
+         numero di tentativi fatti dall'utente, imposta il numero massimo di tentativi e il 
+         tempo massimo per indovinare il numero, avvia il timer e definisce una funzione per 
+         verificare il tentativo dell'utente. -->
+
+    <h1> Indovina il numero </h1>
+    
+    <p> Ho pensato a un numero tra 1 e 100. Prova ad indovinare! </p>
+    
+    <p> Inserisci il tuo tentativo: </p>
+    
+    <input type="text" id="tentativo">
+    <input type="button" value="Indovina" onclick="verificaTentativo()">
+    
+
+    <div class="risultato" id="risultato"></div> 
+    
+
+    <p>Tentativi fatti: <span id="num-tentativi"> 0 </span></p>
+    
+    <p class="timer">Tempo rimanente: 
+        <span id="timer"></span>
+    </p>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

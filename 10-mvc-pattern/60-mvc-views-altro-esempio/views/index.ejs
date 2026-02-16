@@ -1,0 +1,12 @@
+
+<!-- Titolo della pagina -->
+<h1><%= title %></h1>
+
+<!-- Lista di elementi -->
+<ul>
+    <% items.forEach((item) => { %>  
+        <!-- Itera su ogni elemento della lista e lo mostra in un <li> -->
+        <li><%= item.name %></li>
+    <% }) %>
+</ul>
+

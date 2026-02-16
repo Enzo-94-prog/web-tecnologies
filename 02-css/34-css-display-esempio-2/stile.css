@@ -1,0 +1,19 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.a {
+  border: 1px solid red;
+  background-color: lightcoral;
+  width: 200px; /* larghezza */
+  padding: 10px; /* distanza tra il content e il border */
+}
+
+.b {
+  /* display: block; */
+  display: inline-block;
+  border: 1px solid black;
+  background-color: lightgray;
+  padding: 10px;
+}

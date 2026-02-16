@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestGetPost</title>
+    <link rel="stylesheet" href="stile.css" type="text/css">
+</head>
+
+<body>
+    Hello world
+
+    <a href="https://www.google.com"> click me </a>     <!-- GET -->
+
+    <!-- Questa linea di codice HTML crea un collegamento ipertestuale (link) che porta 
+    alla pagina web di Google. Quando l'utente clicca su "click me", il browser lo 
+    reindirizza all'URL specificato (`https://www.google.com`).
+
+    Ecco la spiegazione dei componenti principali:
+
+    1. `<a>`: Tag HTML che definisce un collegamento ipertestuale.
+    2. `href="https://www.google.com"`: Attributo che specifica l'URL verso cui il link punta (in questo caso, Google).
+    3. `"click me"`: Testo visibile per l'utente e cliccabile come link.
+    4. `</a>`: Chiusura del tag `<a>`.
+
+    ### Output visivo
+    Sul sito web, apparirà così:  
+    **click me** (come un testo cliccabile, spesso di colore blu e sottolineato di default).
+
+    Se clicchi su "click me", verrai reindirizzato alla pagina di Google. -->
+
+
+    <script src="script.js"></script>
+
+    <form action="/test" method="post">             <!-- POST --> 
+        <input type="text" name="myName" id="myName">
+        <input type="submit" name="mySubmit" id="mySubmit" value="send">
+    </form>
+
+    <!-- Spiegazione dei componenti della form:
+
+    1.  <form action="/test" method="post">
+
+        action="/test": Specifica l'URL del server a cui i dati del modulo verranno inviati 
+                        (in questo caso, /test è relativo all'host).
+        
+        method="post": Indica il metodo HTTP utilizzato per l'invio dei dati. Il metodo POST 
+                       viene generalmente utilizzato per inviare dati in modo sicuro o per 
+                       operazioni che modificano qualcosa sul server.
+        
+
+
+    2.  <input type="text" name="myname" id="myId">
+
+        type="text": Crea un campo di input testuale che consente all'utente di digitare 
+                     del testo.
+
+        name="myname": Specifica il nome del campo che sarà utilizzato per inviare i dati 
+                       (nel server, il valore sarà associato al nome myname).
+        
+        id="myId": Un identificatore univoco per questo campo, utile per i CSS o JavaScript.
+        
+        
+
+    3.  <input type="submit" name="mySubmit" id="mySubmit" value="send">
+
+        type="submit": Crea un pulsante che, quando cliccato, invia i dati del modulo.
+        
+        name="mySubmit": Il nome associato a questo pulsante nel caso fosse necessario 
+                         riconoscerlo lato server.
+        
+        id="mySubmit": Identificativo univoco per il pulsante.
+        
+        value="send": Specifica il testo che apparirà sul pulsante (in questo caso "send").
+        
+
+        Come appare nella pagina web:
+        1. Una casella di testo dove l'utente può inserire il proprio nome.
+        2. Un pulsante con l'etichetta "send" per inviare i dati.
+
+
+        -->
+
+</body>
+</html>

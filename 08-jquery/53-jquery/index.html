@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esempio jQuery</title>
+
+    <!-- Meta tag per la visibilità su dispositivi mobili e il corretto dimensionamento della pagina -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Inclusione della libreria di JQuery -->
+    <script src="jquery-3.7.1.js"></script>
+
+    
+    <script>
+        // Aspetta che il documento sia completamente caricato
+        $(document).ready(function() {
+            // Modifica il testo del titolo <h1>
+            $("h1").text("Questo è un titolo modificato con jQuery!");
+    
+            // Modifica il testo del paragrafo con ID "mio_paragrafo"
+            $("#mio_paragrafo").text("Paragrafo modificato");
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Quando il documento è completamente caricato
+            $("#mio_bottone").on("click", function() {
+                // Quando viene cliccato il bottone con ID "mio_bottone",
+                // modifica il testo del paragrafo con ID "mio_paragrafo"
+                $("#mio_paragrafo").text("new text");
+            });
+        });
+    </script>
+
+
+    <style>
+        /* Inizialmente il div è nascosto */
+        #mio_div {
+            display: none;
+            opacity: 0;
+            background-color: lightblue;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            border: 1px solid blue;
+            width: 200px;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1> La mia pagina con jQuery </h1>
+    <p id="mio_paragrafo"> Questo è il mio paragrafo </p>
+    <button id="mio_bottone"> Cliccami! </button>
+    <hr>
+
+    <button id="mostra_div"> Mostra il Div </button>
+    <div id="mio_div"> Esempio funzione di Callback </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Seleziona il bottone e il div
+            var bottone = document.getElementById("mostra_div");
+            var div = document.getElementById("mio_div");
+
+            // Aggiunge un event listener al pulsante
+            bottone.addEventListener("click", function() {
+                // Mostra il div prima di animarlo
+                div.style.display = "block";
+                
+                var opacita = 0;
+                var durata = 1000; // Durata dell'animazione in ms
+                var intervallo = 10; // Ogni quanti ms aggiornare l'animazione
+                var incremento = 1 / (durata / intervallo); 
+
+                // Effetto fadeIn manuale
+                var fadeIn = setInterval(function() {
+                    if (opacita < 1) {
+                        opacita += incremento;
+                        div.style.opacity = opacita;
+                    } else {
+                        clearInterval(fadeIn); // Ferma l'animazione
+                        div.style.opacity = 1; // Assicura che sia al 100%
+                        alert("L'elemento è stato mostrato completamente!");
+                    }
+                }, intervallo);
+            });
+        });
+    </script>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="script.js>"></script>
+</body>
+</html>
+
+

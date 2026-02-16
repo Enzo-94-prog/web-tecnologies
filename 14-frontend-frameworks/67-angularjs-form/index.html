@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+
+  <!-- Imposta la codifica dei caratteri per il documento -->
+  <meta charset="utf-8">
+  <!-- Titolo della pagina che appare nella barra del browser -->
+  <title>My AngularJS App</title>
+  <!-- Include la libreria AngularJS dalla rete di distribuzione di Google -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- Include il file script.js, che contiene la logica dell'applicazione -->
+  <script src="script.js"></script>
+
+</head>
+<body>
+
+
+<!-- Form AngularJS con controller "MyController" -->
+<form name="myForm" ng-controller="MyController" ng-submit="submitForm()" novalidate>
+
+  <!-- Campo per il Nome -->
+  <div>
+      <label for="name">Nome:</label>
+      <!-- Input per il nome collegato a user.name tramite ng-model -->
+      <input type="text" name="name" ng-model="user.name" ng-required="true">
+      
+      <!-- Messaggio di errore mostrato se il campo nome è obbligatorio ma vuoto -->
+      <div ng-show="myForm.name.$error.required">Il nome è obbligatorio.</div>
+  </div>
+
+  <!-- Campo per l'Email -->
+  <div>
+      <label for="email">Email:</label>
+      <!-- Input per l'email con validazione tramite ng-required e pattern regex -->
+      <input type="email" name="email" ng-model="user.email" ng-required="true" ng-pattern="/^.+@.+\..+$/">
+      
+      <!-- Messaggio di errore se il campo email è vuoto -->
+      <div ng-show="myForm.email.$error.required">L'email è obbligatoria.</div>
+      
+      <!-- Messaggio di errore se l'email non rispetta il pattern corretto -->
+      <div ng-show="myForm.email.$error.pattern">L'email non è valida.</div>
+  </div>
+
+  <!-- Pulsante di invio disabilitato se il form è invalido -->
+  <button type="submit" ng-disabled="myForm.$invalid">Invia</button>
+
+</form>
+<br><br>
+<hr>
+
+<!-- Form AngularJS -->
+<form name="myForm">
+  <!-- Campo di input collegato a "myInput" con validazione richiesta -->
+  <input name="myInput" ng-model="myInput" required>
+</form>
+
+<!-- Testo esplicativo -->
+<p>The input's valid state is:</p>
+
+<!-- Mostra lo stato di validità del campo di input -->
+<h1>{{ myForm.myInput.$valid }}</h1>
+
+
+
+</body>
+</html>
+

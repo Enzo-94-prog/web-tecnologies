@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Impostazione del charset per il corretto encoding dei caratteri -->
+    <meta charset="utf-8">
+    
+    <!-- Titolo della pagina -->
+    <title>AJAX con jQuery</title>
+    
+    <!-- Inclusione della libreria jQuery -->
+    <script src="jquery-3.7.1.js"></script>
+    
+    <script>
+        // Una volta che il documento è pronto, esegui il codice
+        $(document).ready(function() {
+            
+            // Quando viene cliccato il bottone con ID 'btn-get-data'
+            $('#btn-get-data').click(function() {
+                
+                // Esegui una richiesta AJAX
+                $.ajax({
+                    // L'URL da cui vogliamo ottenere i dati
+                    url: 'https://jsonplaceholder.typicode.com/todos/1',
+                    
+                    // Il metodo HTTP per la richiesta (GET)
+                    method: 'GET',
+                    
+                    // Specifica che ci aspettiamo una risposta JSON
+                    dataType: 'json',
+                    
+                    // Funzione da eseguire se la richiesta ha successo
+                    success: function(data) {
+                        // Mostra i dati ricevuti nel contenitore con ID 'data-container'
+                        $('#data-container').html('<p>' + JSON.stringify(data) + '</p>');
+                    },
+                    
+                    // Funzione da eseguire se c'è un errore nella richiesta
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        // Log dell'errore nella console
+                        console.error(textStatus, errorThrown);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Titolo della pagina -->
+    <h1>AJAX con jQuery</h1>
+    
+    <!-- Bottone per ottenere i dati -->
+    <button id="btn-get-data">Ottieni dati</button>
+    
+    <!-- Contenitore per visualizzare i dati ottenuti -->
+    <div id="data-container"></div>
+</body>
+</html>

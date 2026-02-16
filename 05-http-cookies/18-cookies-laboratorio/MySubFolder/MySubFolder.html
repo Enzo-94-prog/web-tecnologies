@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sub Content</title>
+    <link rel="stylesheet" href="../stile.css" type="text/css">
+    <script src="../Cookie.js"></script>
+</head>
+<body>
+
+    Hello Sub Contenent
+
+    <script>
+        
+        /* path='/MySubFolder' → Il cookie sarà disponibile solo per il 
+                                 percorso /MySubFolder e le sue sottodirectory. 
+
+           max-age=1 → Il cookie scadrà dopo 1 secondo   */
+
+        setCustomCookie("sub", 5678, {'path':'/','max-age': 3600})
+        /* la chiamata setCustomCookie("sub", 5678, {'path':'/MySubFolder', 'max-age':1 });
+           genererà e imposterà il cookie come: sub=5678; path=/MySubFolder; max-age=1  */
+
+        
+        /* Effetto pratico:
+
+        Il cookie sarà accessibile solo per /MySubFolder.
+
+        Se provi ad accedere al cookie da una pagina fuori da /MySubFolder, il cookie non 
+        sarà inviato al server. Il cookie durerà solo 1 secondo
+
+        Dopo 1 secondo, il browser eliminerà automaticamente il cookie.
+        Se aggiorni la pagina dopo 2 secondi, il cookie non sarà più disponibile.
+        Possibile problema con max-age=1
+        ⚠️ Il valore max-age=1 è molto basso e potrebbe essere eliminato quasi subito, 
+            quindi in pratica il cookie potrebbe non essere utilizzabile. Se vuoi un cookie 
+            che duri un po' di più, puoi impostare max-age=60 (1 minuto) o un valore più alto.*/
+
+
+        console.log(getCookie("sub"))
+
+    </script>
+    
+</body>
+</html>

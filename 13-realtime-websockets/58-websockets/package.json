@@ -1,0 +1,15 @@
+{
+  "name": "57-nodejs",
+  "version": "1.0.0",
+  "description": "Descrizione del progetto",
+  "main": "index.js",
+  "scripts": {
+    "test": "start: node index.js"
+  },
+  "author": "enzo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.1"
+  }
+}

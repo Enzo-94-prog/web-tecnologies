@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bootstrap </title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    
+    <div class="d-flex p-2 text-danger" > I'm a flexbox container! </div>
+
+    <!-- Bootstrap fornisce classi di colore predefinite, come:
+
+        text-primary → Blu
+        text-danger → Rosso
+        text-success → Verde
+        text-white → Bianco
+        text-dark → Nero
+        text-muted → Grigio chiaro -->
+    <hr>
+
+    <div class="d-inline-flex p-2">I'm a flexbox container!</div>
+    <hr>
+
+    <!-- 🔹 Il primo div dispone gli elementi in riga (flex-row). La classe mb-3 in Bootstrap significa "margin-bottom: 1rem" (16px di spazio sotto l'elemento).
+             💡 Spiegazione:
+                m → Margin
+                b → Bottom (margine inferiore)
+                3 → Scala di Bootstrap per le spaziature (da 0 a 5, dove 3 è pari a 1rem o 16px)
+            🔹 Il secondo div li dispone in riga ma in ordine inverso (flex-row-reverse). -->
+    
+    <!-- direction -->
+    <div class="d-flex flex-row mb-3">
+        <div class="p-2">Flex item 1</div>
+        <div class="p-2">Flex item 2</div>
+        <div class="p-2">Flex item 3</div>
+    </div>
+    
+    <div class="d-flex flex-row-reverse">
+        <div class="p-2">Flex item 1</div>
+        <div class="p-2">Flex item 2</div>
+        <div class="p-2">Flex item 3</div>
+    </div>
+    <hr>
+    <!--  -->
+
+    <br>
+    
+    <!-- direction -->
+    <div class="d-flex flex-column mb-3">
+        <div class="p-2">Flex item 1</div>
+        <div class="p-2">Flex item 2</div>
+        <div class="p-2">Flex item 3</div>
+    </div>
+    
+    <div class="d-flex flex-column-reverse">
+        <div class="p-2">Flex item 1</div>
+        <div class="p-2">Flex item 2</div>
+        <div class="p-2">Flex item 3</div>
+    </div>
+    <hr>   
+
+    <!-- justify content -->
+    <style>
+        div.just p {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+    
+    <div class="just">
+        <div class="d-flex justify-content-start">
+            <p>Lorem</p>
+            <p>Ipsum</p>
+            <p>Dolor</p>
+        </div>
+    
+        <div class="d-flex justify-content-end">
+            <p>Lorem</p>
+            <p>Ipsum</p>
+            <p>Dolor</p>
+        </div>
+    
+        <div class="d-flex justify-content-center">
+            <p>Lorem</p>
+            <p>Ipsum</p>
+            <p>Dolor</p>
+        </div>
+    
+        <div class="d-flex justify-content-between">
+            <p>Lorem</p>
+            <p>Ipssm</p>
+            <p>Dolor</p>
+        </div>
+    
+        <div class="d-flex justify-content-around">
+            <p>Lorem</p>
+            <p>Ipsum</p>
+            <p>Dolor</p>
+        </div>
+    
+        <div class="d-flex justify-content-evenly">
+            <p>Lorem</p>
+            <p>Ipsum</p>
+            <p>Dolor</p>
+        </div>
+    </div>
+    <hr>
+
+    <!-- wrapping con flex-shrink:0 attivo -->
+    <style>
+        .container {
+            display: flex; /* definizione del flexbox */ 
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+    
+        .box {
+            width: 200px;
+            height: 200px;
+            margin-right: 10px;
+            background-color: #007bff;
+            /* flex-shrink: 0; da inserire se non voglio che il box sia
+            ridimensionato (shrink significa “ristretto”) */
+        }
+    </style>
+    
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <hr>
+
+    <!-- wrapping con flex-shrink da attivare (cambia anche quello di sopra) -->
+    <style>
+        .container {
+            display: flex; /* definizione del flexbox */
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            margin-right: 10px;
+            background-color: #007bff;
+            /* flex-shrink: 0; da inserire se non voglio che il box sia
+            ridimensionato (shrink significa “ristretto”) */
+        }
+    </style>
+
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <hr>
+
+    <!-- wrapping attivo con flex-shrink che anche se attivo non ha effetto -->
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            overflow-x: auto;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+    
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: #007bff;
+        }
+    </style>
+
+    <!-- Restringere o allargare la pagina per vedere 
+         il comportamento dei flexbox -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

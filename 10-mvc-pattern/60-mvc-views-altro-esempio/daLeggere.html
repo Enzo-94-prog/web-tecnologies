@@ -1,0 +1,81 @@
+
+
+<!-- È possibile utilizzare la sintassi for o forEach per iterare un array o un oggetto e 
+     generare HTML dinamicamente -->
+
+<!-- Inizio della lista non ordinata -->
+<ul>
+  <!-- Ciclo attraverso l'array 'users' usando un ciclo for tradizionale -->
+  <% for (let i = 0; i < users.length; i++) { %>
+    <!-- Crea un elemento di lista (<li>) per ogni 'user' e visualizza il nome dell'utente -->
+    <li><%= users[i].name %></li>
+  <% } %>
+</ul>
+<!-- Fine della lista non ordinata -->
+
+
+<!-- Inizio della lista non ordinata -->
+<ul>
+  <!-- Ciclo attraverso l'array 'users' usando il metodo forEach -->
+  <% users.forEach(user => { %>
+    <!-- Crea un elemento di lista (<li>) per ogni 'user' e visualizza il nome dell'utente -->
+    <li><%= user.name %></li>
+  <% }) %>
+</ul>
+<!-- Fine della lista non ordinata -->
+
+
+
+<!-- È possibile utilizzare la sintassi if e else per creare blocchi di codice HTML 
+     condizionati.  -->
+
+<!-- Controllo se 'user.isAdmin' è vero (se l'utente è un amministratore) -->
+<% if (user.isAdmin) { %>
+  <!-- Se è un amministratore, mostra il messaggio di benvenuto per l'amministratore -->
+  <p>Welcome, admin!</p>
+<% } else { %>
+  <!-- Altrimenti, se non è un amministratore, mostra il messaggio di benvenuto per l'utente normale -->
+  <p>Welcome, user!</p>
+<% } %>
+
+
+
+<!-- È possibile creare file parziali con parti di codice HTML comune a più view e includerli
+     utilizzando la sintassi <%- include('partial') %>: -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- Imposta il titolo della pagina dinamicamente usando il valore 'title' passato dal controller -->
+  <title><%= title %></title>
+
+  <!-- Include il file parziale 'head' che probabilmente contiene metadati, link a CSS, script, ecc. -->
+  <%- include('partials/head') %>
+</head>
+<body>
+  <!-- Include il file parziale 'header' che contiene l'intestazione della pagina -->
+  <%- include('partials/header') %>
+
+  <!-- Visualizza il titolo della pagina -->
+  <h1><%= title %></h1>
+
+  <!-- Visualizza il contenuto dinamico della pagina -->
+  <p><%= content %></p>
+
+  <!-- Include il file parziale 'footer' che contiene il piè di pagina della pagina -->
+  <%- include('partials/footer') %>
+
+
+  <!-- Funzionamento:
+       Il codice rende dinamica la pagina HTML, utilizzando EJS per includere parti comuni 
+       (come l'intestazione e il piè di pagina) e per inserire contenuti personalizzati, 
+       come il titolo della pagina e il contenuto.
+
+       I file parziali head, header, e footer vengono inclusi per mantenere il codice 
+       modulare e facilmente gestibile, evitando ripetizioni su più pagine.
+   -->
+
+</body>
+</html>
+
+

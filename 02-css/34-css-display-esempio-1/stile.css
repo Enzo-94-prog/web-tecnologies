@@ -1,0 +1,14 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    color: red;
+  /*display: block; è il valore predefinito per <div>, <p> e <h> se non specificato */
+}
+
+p.ex1 { display: none;}
+p.ex2 { display: inline;}
+p.ex3 { display: block;}
+p.ex4 { display: inline-block;}

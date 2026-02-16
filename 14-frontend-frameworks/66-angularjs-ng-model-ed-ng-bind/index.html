@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+
+  <!-- Imposta la codifica dei caratteri per il documento -->
+  <meta charset="utf-8">
+  <!-- Titolo della pagina che appare nella barra del browser -->
+  <title>My AngularJS App</title>
+  <!-- Include la libreria AngularJS dalla rete di distribuzione di Google -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- Include il file script.js, che contiene la logica dell'applicazione -->
+  <script src="script.js"></script>
+
+</head>
+<body>
+
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <label for="emailInput">Email:</label>
+    <input type="email" id="emailInput" ng-model="user.email">
+    <p>La tua email è: {{user.email}}</p>
+  </div>
+
+</body>
+</html>
+
+<!-- 
+📌 Spiegazione del codice
+
+<!DOCTYPE html>: Definisce che il documento è un file HTML5.
+
+<html ng-app="myApp">: Il tag <html> include l'attributo ng-app="myApp", che dice ad 
+                       AngularJS di inizializzare l'app con il nome myApp.
+                       
+<head>:
+
+    <meta charset="utf-8">: Imposta la codifica dei caratteri su UTF-8.
+    <title>My AngularJS App</title>: Definisce il titolo che appare nella barra del browser.
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>: Include la libreria AngularJS, che consente di utilizzare AngularJS nel tuo progetto.
+    <script src="script.js"></script>: Include il file script.js dove risiede la logica 
+                                       della tua applicazione AngularJS.
+
+<body ng-controller="myCtrl">: L'attributo ng-controller="myCtrl" associa il corpo del 
+                               documento al controller myCtrl che viene definito nel file 
+                               script.js. Il controller gestirà la logica per il contenuto 
+                               della pagina.
+
+h1>{{ greeting }}</h1>: AngularJS esegue l'interpolazione e sostituisce {{ greeting }} con 
+                        il valore della variabile greeting definita nel controller.
+
+<input type="text" ng-model="name">: Il tag <input> è legato a una variabile name tramite 
+                                     l'attributo ng-model. Quando l'utente scrive nel campo
+                                     di input, Angular aggiornerà automaticamente il valore 
+                                     della variabile name.
+
+<p>Hello, {{ name }}!</p>: Questa riga visualizza un messaggio che saluta l'utente, 
+                           utilizzando la variabile name (che verrà aggiornata ogni 
+                           volta che l'utente cambia il testo nell'input).
+
+
+
+Come funziona:
+Quando l'applicazione viene caricata, AngularJS inizializza l'app con il nome myApp.
+Il controller myCtrl (definito nel file script.js) gestirà la variabile greeting e altri 
+dati per l'applicazione. Ogni volta che l'utente inserisce del testo nel campo input, 
+Angular aggiorna automaticamente la variabile name e di conseguenza il messaggio che saluta 
+l'utente.
+
+-->

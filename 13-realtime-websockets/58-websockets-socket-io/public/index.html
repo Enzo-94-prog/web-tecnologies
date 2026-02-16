@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Echo Client</title>
+</head>
+
+<body>
+    <!-- Form per l'invio di un messaggio -->
+    <form id="form">
+        <label for="message">Messaggio:</label>
+        <input type="text" id="message" name="message">
+        <button type="submit">Invia</button>
+    </form>
+
+    <!-- Area per visualizzare i messaggi ricevuti -->
+    <div id="messages"></div>
+
+    <!-- Importa la libreria Socket.IO per la connessione WebSocket -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // Crea una connessione WebSocket con il server
+        const socket = io('http://127.0.0.1:3001');
+
+        // Gestione dell'invio del messaggio dal form
+        const form = document.getElementById('form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Previene il ricaricamento della pagina
+
+            // Prende il valore del campo di input
+            const messageInput = document.getElementById('message');
+            const message = messageInput.value;
+
+            // Invia il messaggio al server WebSocket
+            socket.emit('message', message);
+
+            // Pulisce il campo di input dopo l'invio
+            messageInput.value = '';
+        });
+
+        // Gestisce i messaggi ricevuti dal server
+        socket.on('message', (message) => {
+            const messagesContainer = document.getElementById('messages');
+
+            // Crea un nuovo elemento <p> per visualizzare il messaggio
+            const messageElement = document.createElement('p');
+            messageElement.textContent = message;
+
+            // Aggiunge il messaggio alla lista dei messaggi
+            messagesContainer.appendChild(messageElement);
+        });
+    </script>
+</body>
+</html>
+
+<!-- 
+
+Commento sul codice
+✅ Funzionamento.
+Il codice crea una pagina HTML con un form per l'inserimento di un messaggio.
+I messaggi vengono inviati a un server WebSocket usando socket.emit('message', message).
+Quando il server risponde con un messaggio, questo viene visualizzato in un <div> sotto il 
+form.
+
+-->

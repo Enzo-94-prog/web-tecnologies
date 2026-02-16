@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.red5 {
+    background-color: red;
+    width: 300px; /* larghezza */
+    height: 300px; /* altezza */
+    position: relative; /* Il div diventa il riferimento per il posizionamento assoluto */
+                        /* funge da contenitore di riferimento */
+}              
+
+img {
+    border: 5px solid;
+    position: absolute; /* img posizionata rispetto ai bordi del div (e non rispetto al documento intero) 
+                           in quanto antenato più vicino che ha un valore di position diverso da static */
+    right: 50px;
+}
+
+/* 🔹Il posizionamento assoluto rimuove l'immagine dal normale flusso del documento e la posiziona esattamente 
+      nel punto specificato, basandosi sull'elemento contenitore con position diversa da static. */

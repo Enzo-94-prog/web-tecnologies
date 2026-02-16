@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+
+  <!-- Imposta la codifica dei caratteri per il documento -->
+  <meta charset="utf-8">
+  <!-- Titolo della pagina che appare nella barra del browser -->
+  <title>My AngularJS App</title>
+  <!-- Include la libreria AngularJS dalla rete di distribuzione di Google -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- Include il file script.js, che contiene la logica dell'applicazione -->
+  <script src="script.js"></script>
+
+</head>
+<body>
+
+    <!-- Primo div controllato da "myCtrl" -->
+  <div ng-controller="myCtrl">
+    <!-- Visualizza la variabile "greeting" definita nel controller -->
+    <h1>{{ greeting }}</h1>
+
+    <!-- Campo di input legato alla variabile "name" -->
+    <input type="text" ng-model="name">
+
+    <!-- Mostra un messaggio dinamico che include il valore di "name" -->
+    <p>Hello, {{ name }}!</p>
+  </div>
+
+  <!-- Secondo div controllato da "userController" -->
+  <div ng-controller="userController">
+    <!-- Titolo della sezione utenti -->
+    <h1>Users</h1>
+
+    <!-- Lista di utenti generata dinamicamente -->
+    <ul>
+        <!-- ng-repeat: ripete l'elemento <li> per ogni utente presente nell'array "users" -->
+        <li ng-repeat="user in users">
+            {{ user.name }} ({{ user.email }}) <!-- Mostra nome ed email di ogni utente -->
+        </li>
+    </ul>
+  </div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+div {
+    background-color: lightgray;
+}
+
+/* applica uno stile speciale alla prima lettera del testo contenuto in un elemento <div> con la classe primo */
+div.primo:first-letter {
+    font-size: xx-large; /* Ingrandisce la prima lettera */
+    float: left; /* La fa "galleggiare" a sinistra */
+    color: red
+}
+#uno {
+    background-color: lightcoral;
+}
+#due {
+    background-color: lightcyan;
+}
+#tre {
+    background-color: lightgreen;
+    height: 150px;
+    overflow: scroll; /* mostra barre di scorrimento che consentono di accedere al contenuto eccedente 
+                         (viene mantenuto il background su tutto lo scorrimento) */
+    }
+#quattro {
+    background-color: lightpink;
+    height: 150px;
+}
+img.sx {
+    border-width: none;
+    float: left
+}
+img.dx {
+    border-width: none;
+    float: right
+}
+div.dx {
+    border-width: 1px;
+    border-color: black;
+    background-color: lightsteelblue;
+    float: right
+}
+
+/*Alcune considerazioni:
+- Il div “standard” prevede un background color lightgray
+- Qualora nell’html non si specifichi alcun id o classe verrà considerato il div standard
+(relativamente al background color)
+- Specificando un id (#uno, #due ecc.), verrà considerato lo stile associato al div associato 
+nel foglio di stile e pertanto cambierà il colore di background o l’altezza del div 
+(se specificata)
+- Sono state definite delle classi sx e dx associate ad tag img e pertanto se nell’html verrà indicata
+una delle classi, si dovrà far riferimento a quella classe
+- È stata definita una classe dx associate ad tag div e pertanto se nell’html verrà indicata tale
+classi, si dovrà far riferimento a quella classe per lo stile*/
+
+
+/* La proprietà clear serve a disattivare l’effetto della proprietà float sugli altri elementi che lo
+   seguono, ovvero a impedire che al fianco di un elemento float (dx, sx o entrambi) compaiano altri 
+   elementi 
+   Tale proprietà si applica solo agli elementi blocco e non è ereditata; i valori che può assumere 
+   sono:
+   - none: gli altri elementi possono stare sia a destra che a sinistra dell'elemento
+   - left: impedisce il posizionamento a sinistra
+   - right: impedisce il posizionamento a destra
+   - both: impedisce il posizionamento su entrambi i lati*/
+.remove_float {
+    clear:left
+}
