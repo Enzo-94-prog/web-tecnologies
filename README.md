@@ -1,63 +1,59 @@
-# Tecnologie Web – Portfolio & Lab Book (HTML, CSS, JavaScript)
+# Web Technologies – Portfolio & Lab Book
 
-Raccolta **curata** di laboratori/esercizi svolti durante il corso di *Tecnologie Web*: una via di mezzo tra **portfolio** (prove pratiche) e **quaderno di appunti** (progressione per argomenti).
+This repository collects the exercises and small implementations I developed while attending a university course in Web Technologies.
 
-> Nota: questa repo include solo **codice sorgente** e materiali utili. Le dipendenze (`node_modules`) sono volutamente escluse: per eseguire i progetti Node/React basta installarle con `npm install`.
+It is not a single project.
+Instead, it documents my learning path while studying how web applications actually work, starting from basic HTML pages and progressively moving toward JavaScript interaction and simple backend applications.
 
-## Cosa trovi qui
-- **Fondamentali Web**: HTML, form, CSS (box-model, display, positioning)
-- **JavaScript**: oggetti/array, JSON
-- **DOM**: manipolazione, eventi, form, mini-progetto TODO
-- **UI**: Bootstrap (grid/flex), jQuery + AJAX
-- **Backend**: Node.js, Express, MVC, middleware, auth (Passport/OAuth), chiamate HTTP (Axios)
-- **Database & dati**: MongoDB, esempi con file JSON
-- **Realtime**: WebSockets, Socket.io
-- **Frontend frameworks**: Vue, AngularJS, React (starter app)
+The purpose of this repository is to show practical experience and familiarity with the main concepts of web development.
 
-## Struttura
-Le cartelle sono raggruppate per macro-argomento (numerazione = ordine logico):
-- `01-html/`, `02-css/`, `03-javascript/`, `04-dom/`
-- `05-http-cookies/`, `06-data-formats/`
-- `07-bootstrap/`, `08-jquery/`
-- `09-node-express/`, `10-mvc-pattern/`, `11-auth-middleware/`, `12-databases/`
-- `13-realtime-websockets/`
-- `14-frontend-frameworks/`
+---
 
+## Topics covered
 
-## Come eseguire i progetti (Node / React / Vue)
-Se in una cartella trovi un `package.json`:
+While working on these exercises I practiced:
+
+* HTML page structure and forms
+* CSS layout (box model, positioning, responsive behavior)
+* JavaScript fundamentals (objects, arrays, JSON)
+* DOM manipulation and event handling
+* Asynchronous requests (AJAX)
+* Basic HTTP concepts (cookies and sessions)
+* Node.js and Express applications
+* Simple MVC organization
+* Authentication middleware examples
+* MongoDB and JSON data usage
+* WebSockets and real-time communication
+* Introductory frontend frameworks (Vue, AngularJS, React)
+
+The repository contains **source code only**.
+Dependencies are excluded on purpose.
+
+If a folder contains a `package.json`, you can run the project locally with:
 
 ```bash
 npm install
-npm run start   # oppure: npm start
+npm start
 ```
 
-Se esiste uno script diverso, lo trovi in `package.json` (sezione `scripts`).
+---
 
-## Highlights 
-- **TODO list** (DOM + eventi) → `04-dom/`
-- **Express + pattern MVC** → `10-mvc-pattern/`
-- **WebSockets / Socket.io** → `13-realtime-websockets/`
-- **React starter app** → `14-frontend-frameworks/69-react/my-app/`
+## Suggested folders to explore
+
+For a quick overview of my coding style and understanding:
+
+* `04-dom/` → interactive behavior and event handling
+* `09-node-express/` → simple backend logic
+* `10-mvc-pattern/` → project organization
+* `13-realtime-websockets/` → client/server interaction
+
+The other folders represent earlier steps of the learning process.
 
 ---
 
-### English (quick)
-Curated collection of web-development labs from a university course. Source-only (no `node_modules`).  
-For Node/React projects: `npm install` then `npm start`.
+## Academic context
 
----
+These exercises were originally part of a university course.
+All implementations and modifications in the code are written by me and published here as a personal learning portfolio
 
-## Academic Context
-
-This repository collects laboratory exercises completed as part of a university course in Web Technologies.
-
-The goal of this project is to demonstrate practical understanding of:
-
-* HTML semantics
-* CSS layout and responsiveness
-* JavaScript and DOM manipulation
-* Client-server interaction (Node.js)
-* Basic frontend frameworks
-
-The work is presented strictly as a technical portfolio and learning record.
+The repository is shared only for demonstration and educational purposes.
