@@ -45,3 +45,19 @@ Se esiste uno script diverso, lo trovi in `package.json` (sezione `scripts`).
 ### English (quick)
 Curated collection of web-development labs from a university course. Source-only (no `node_modules`).  
 For Node/React projects: `npm install` then `npm start`.
+
+---
+
+## Academic Context
+
+This repository collects laboratory exercises completed as part of a university course in Web Technologies.
+
+The goal of this project is to demonstrate practical understanding of:
+
+* HTML semantics
+* CSS layout and responsiveness
+* JavaScript and DOM manipulation
+* Client-server interaction (Node.js)
+* Basic frontend frameworks
+
+The work is presented strictly as a technical portfolio and learning record.
